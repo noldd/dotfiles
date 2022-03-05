@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+set -eu
+
+# TODO: Path should be able to be set using the first parameter
+
+REPO_NAME="$(basename "$(git rev-parse --show-toplevel)")"
+CURRENT_WORKSPACE_NUMBER="$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).num')"
+NEW_WORKSPACE_NAME="$CURRENT_WORKSPACE_NUMBER - $REPO_NAME"
+
+i3-msg "workspace number $CURRENT_WORKSPACE_NUMBER; append_layout /home/arnold/test_layout.json"
+i3-msg rename workspace to \""$NEW_WORKSPACE_NAME"\"
