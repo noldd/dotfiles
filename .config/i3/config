@@ -3,6 +3,7 @@ exec --no-startup-id compton
 exec --no-startup-id dunst
 exec --no-startup-id $HOME/.local/bin/tools/remaps
 exec --no-startup-id setbg
+exec --no-startup-id autorandr -c
 
 #
 # Basic definitions
