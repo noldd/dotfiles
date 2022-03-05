@@ -1,0 +1,141 @@
+# Start programs and run scripts
+exec --no-startup-id compton
+exec --no-startup-id dunst
+exec --no-startup-id $HOME/.local/bin/tools/remaps
+exec --no-startup-id setbg
+
+#
+# Basic definitions
+#
+set $mod Mod4
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+set $term --no-startup-id $TERMINAL
+
+#
+# Appearance
+#
+font pango:monospace 8
+for_window [class="^.*"] border pixel 3
+
+#
+# Scratchpads
+#
+# General droptown traits. The order can matter.
+for_window [instance="dropdown_*"] floating enable
+for_window [instance="dropdown_*"] move scratchpad
+for_window [instance="dropdown_*"] sticky enable
+for_window [instance="dropdown_*"] scratchpad show
+for_window [instance="dropdown_tmuxdd"] resize set 625 450
+for_window [instance="dropdown_dropdowncalc"] resize set 800 300
+for_window [instance="dropdown_tmuxdd"] border pixel 3
+for_window [instance="dropdown_dropdowncalc"] border pixel 2
+for_window [instance="dropdown_*"] move position center
+
+#
+# Bar
+#
+# bar {
+# 	font pango:MesloLGS NF Regular 10
+# 	status_command i3blocks
+# 	position top
+# 	mode dock
+# 	modifier None
+# }
+# bar {
+#     status_command ~/.local/bin/bumblebee-status/bumblebee-status \
+#     -m cpu disk memory datetime \
+#     -t gruvbox-powerline
+#     position top
+#     font pango:MesloLGS NF Regular 10
+# }
+
+#
+# Bindings (workspace bindings are below)
+#
+# Basic
+bindsym $mod+Return         exec $term
+bindsym $mod+Shift+Return	exec --no-startup-id samedir
+bindsym $mod+Shift+Escape 	exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
+# Changing focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+# Moving focused window
+bindsym $mod+Shift+h move left 30
+bindsym $mod+Shift+j move down 30
+bindsym $mod+Shift+k move up 30
+bindsym $mod+Shift+l move right 30
+# Letter keys
+bindsym $mod+i 			    exec $term -e htop
+bindsym $mod+Shift+a		exec $term -e pulsemixer
+bindsym $mod+w			    exec $term -e nmtui
+bindsym $mod+Shift+w		exec --no-startup-id $BROWSER
+bindsym $mod+d exec dmenu_run
+bindsym $mod+q			    [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
+bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
+bindsym $mod+Shift+r		exec --no-startup-id winresize
+bindsym $mod+t			    split toggle
+bindsym $mod+u			    exec --no-startup-id ddspawn tmuxdd
+bindsym $mod+a			    exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
+bindsym $mod+f              fullscreen toggle
+bindsym $mod+b			    bar mode toggle
+bindsym $mod+p			    exec passmenu
+bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id hover left # Should use this more often
+bindsym $mod+Shift+n		floating toggle; sticky toggle; exec --no-startup-id hover right # Same goes for this one
+# Resizing
+bindsym $mod+Shift+y		exec --no-startup-id i3resize left
+bindsym $mod+Shift+u		exec --no-startup-id i3resize down
+bindsym $mod+Shift+i		exec --no-startup-id i3resize up
+bindsym $mod+Shift+o		exec --no-startup-id i3resize right
+# Function buttons
+bindsym $mod+F2		        restart
+# Media and misc
+bindsym $mod+plus		    exec --no-startup-id lmc up 5
+bindsym $mod+Shift+plus		exec --no-startup-id lmc up 15
+bindsym $mod+minus 		    exec --no-startup-id lmc down 5
+bindsym $mod+Shift+minus	exec --no-startup-id lmc down 15
+bindsym Print 			    exec --no-startup-id maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
+bindsym Shift+Print 		exec --no-startup-id maimpick
+
+# split in horizontal orientation
+# bindsym $mod+h split h
+
+# split in vertical orientation
+# bindsym $mod+v split v
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the child container
+#bindsym $mod+d focus child
+
+#
+# Workspaces and workspace bindings
+#
+# switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
