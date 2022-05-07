@@ -24,7 +24,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'modille/groovy.vim'
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
@@ -118,7 +118,7 @@ nnoremap <SPACE> /
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
-set shiftwidth=4
+set shiftwidth=2
 " On pressing tab, insert 4 spaces
 set expandtab
 
@@ -149,7 +149,7 @@ nnoremap <C-H> <C-W><C-H>
 " Fuzzy finding
 "
 " Quick file opening
-map <C-p> :Files<CR>
+map <C-p> :GFiles<CR>
 " Recent files
 nmap <leader>fh :History<CR>
 " Find from buffer filenames

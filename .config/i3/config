@@ -36,13 +36,13 @@ for_window [instance="dropdown_*"] move position center
 #
 # Bar
 #
-# bar {
-# 	font pango:MesloLGS NF Regular 10
-# 	status_command i3blocks
-# 	position top
-# 	mode dock
-# 	modifier None
-# }
+bar {
+	font pango:MesloLGS NF Regular 8 
+	status_command i3blocks
+	position top
+	mode dock
+	modifier None
+}
 # bar {
 #     status_command ~/.local/bin/bumblebee-status/bumblebee-status \
 #     -m cpu disk memory datetime \
