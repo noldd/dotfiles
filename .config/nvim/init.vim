@@ -150,8 +150,9 @@ nnoremap <C-H> <C-W><C-H>
 "
 " Fuzzy finding
 "
+let $FZF_DEFAULT_COMMAND='find . \( -name node_modules -o -name .git \) -prune -o -print'
 " Quick file opening
-map <C-p> :GFiles<CR>
+map <C-p> :Files<CR>
 " Recent files
 nmap <leader>fh :History<CR>
 " Find from buffer filenames
@@ -234,3 +235,8 @@ let g:terraform_fmt_on_save=1
 "
 " /Terraform
 "
+
+"
+" Comments
+"
+autocmd FileType typescriptreact setlocal commentstring={/*\ %s\ */}
