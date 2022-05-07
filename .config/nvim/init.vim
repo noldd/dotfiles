@@ -31,6 +31,8 @@ Plug 'dense-analysis/ale'
 Plug 'hashivim/vim-terraform'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'leafgarland/typescript-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " Add plugins before this line
