@@ -111,7 +111,7 @@ map <F7> gg=G<C-o><C-o>
 " Custom mappings
 nnoremap <silent> <Esc> :nohl<CR>
 inoremap <C-e> <C-o>A
-inoremap <C-a> <C-o>I
+" inoremap <C-a> <C-o>I
 nnoremap <C-Space> ?
 nnoremap <SPACE> /
 :let mapleader = ","
@@ -240,3 +240,8 @@ let g:terraform_fmt_on_save=1
 " Comments
 "
 autocmd FileType typescriptreact setlocal commentstring={/*\ %s\ */}
+
+"
+" Emmet
+"
+let g:user_emmet_leader_key='<C-A>'
