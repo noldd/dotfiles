@@ -25,7 +25,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'modille/groovy.vim'
 Plug 'tpope/vim-commentary'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'hashivim/vim-terraform'
@@ -203,18 +202,10 @@ nmap <leader>rn <Plug>(coc-rename)
 " List diagnostics
 nmap <leader>ld :<C-u>CocList diagnostics<cr>
 
+" Add missing imports on save
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 "
 " /COC
-"
-
-"
-" vim-go
-"
-" disable vim-go :GoDef short cut (gd)
-" this is handled by LanguageClient [LC]
-let g:go_def_mapping_enabled = 0
-"
-" vim-go
 "
 
 "
