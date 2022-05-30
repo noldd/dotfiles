@@ -1,5 +1,6 @@
 setlocal tabstop=4
 setlocal shiftwidth=4
+setlocal noexpandtab
 
 " Tags
 nmap <leader>gtj :CocCommand go.tags.add json<cr>
