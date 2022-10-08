@@ -5,6 +5,9 @@ exec --no-startup-id $HOME/.local/bin/tools/remaps
 exec --no-startup-id setbg
 exec --no-startup-id autorandr -c
 
+# Screen layout
+exec --no-startup-id ./.screenlayout/main.sh
+
 #
 # Basic definitions
 #
@@ -73,7 +76,7 @@ bindsym $mod+i 			    exec $term -e htop
 bindsym $mod+Shift+a		exec $term -e pulsemixer
 bindsym $mod+w			    exec $term -e nmtui
 bindsym $mod+Shift+w		exec --no-startup-id $BROWSER
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d              exec rofi -show run
 bindsym $mod+q			    [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdown_).*$"] exec --no-startup-id kill -9 `xdotool getwindowfocus getwindowpid`
 bindsym $mod+Shift+r		exec --no-startup-id winresize
