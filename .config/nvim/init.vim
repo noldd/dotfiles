@@ -16,6 +16,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
@@ -55,13 +56,13 @@ set laststatus=2
 "
 syntax enable
 set background=dark
-colorscheme gruvbox
+colorscheme nord
 highlight LineNr guibg=NONE
 set showtabline=2 " Always show tab bar
 set cursorline
 " Airline
 let g:airline#extensions#tabline#left_alt_sep = 'default'
-let g:airline_theme='gruvbox'
+let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = "\ue0b8"
