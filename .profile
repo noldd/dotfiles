@@ -29,10 +29,11 @@ fi
 # Default programs
 export FILE="ranger"
 export EDITOR="nvim"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export BROWSER="google-chrome-stable"
 export READER="zathura"
 
 # Switch escape and caps if tty:
 sudo -n loadkeys ~/.local/bin/ttymaps.kmap 2>/dev/null
 
+. "$HOME/.cargo/env"
