@@ -2,8 +2,6 @@ font:
   normal:
     family: "MesloLGS NF"
 
-
-# Colors
 colors:
   primary:
     background: '#2e3440'
@@ -52,3 +50,11 @@ colors:
     magenta: '#8c738c'
     cyan: '#6d96a5'
     white: '#aeb3bb'
+
+# Keybinds
+key_bindings:
+  - { key: Space, mods: Alt, mode: ~Search, action: ToggleViMode }
+  - { key: C, mods: Alt, action: Copy }
+  - { key: V, mods: Alt, action: Paste }
+  - { key: J, mods: Alt, mode: ~Alt, action: ScrollPageDown }
+  - { key: K, mods: Alt, mode: ~Alt, action: ScrollPageUp }
