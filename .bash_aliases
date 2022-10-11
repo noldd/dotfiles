@@ -1,5 +1,6 @@
 # Bare repo stuff
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/"
+alias c='config'
 
 # Vim
 alias vim='nvim'
