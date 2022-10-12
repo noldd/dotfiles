@@ -75,6 +75,7 @@ vim.opt.mouse = ""
 
 -- Disable moving lines with alt j and k (Messes with my tmux config)
 -- The line swapping still works like that in visual mode, because it's kinda useful
+-- Relevant: https://github.com/LunarVim/LunarVim/issues/1857
 lvim.keys.insert_mode["<A-j>"] = false
 lvim.keys.insert_mode["<A-k>"] = false
 lvim.keys.normal_mode["<A-j>"] = false
