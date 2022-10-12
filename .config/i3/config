@@ -149,5 +149,5 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # Gaps
 smart_gaps on
 smart_gaps inverse_outer
-smart_borders on
+# smart_borders on
 gaps outer 50
