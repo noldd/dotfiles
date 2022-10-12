@@ -1,3 +1,4 @@
+#!/bin/bash
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.
@@ -30,7 +31,7 @@ fi
 export FILE="ranger"
 export EDITOR="nvim"
 export TERMINAL="alacritty"
-export BROWSER="google-chrome-stable"
+export BROWSER="google-chrome --enable-features=WebUIDarkMode --force-dark-mode"
 export READER="zathura"
 
 # Switch escape and caps if tty:
