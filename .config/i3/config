@@ -1,5 +1,7 @@
+# Start picom compositor in daemon mode
+exec_always --no-startup-id picom -b
+
 # Start programs and run scripts
-exec_always --no-startup-id picom
 exec_always --no-startup-id dunst
 exec_always --no-startup-id $HOME/.local/bin/tools/remaps
 exec_always --no-startup-id setbg
